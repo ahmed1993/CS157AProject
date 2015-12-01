@@ -108,16 +108,18 @@ public class RegisterWindow {
 		JMenu mnFile = new JMenu("File");
 		menuBar.add(mnFile);
 		
+		//when user clicks the go back button
 		JMenuItem mntmLogOut = new JMenuItem("Go Back");
 		mntmLogOut.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				frame.setVisible(false);
 				LoginWindow lw = new LoginWindow();
+				frame.dispose();
 				lw.frame.setVisible(true);
 			}
 		});
 		mnFile.add(mntmLogOut);
 		
+		//when user clicks the exit button
 		JMenuItem mntmExit = new JMenuItem("Exit");
 		mntmExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -24,6 +24,7 @@ public class LoginWindow {
 	Connection conn = null;
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
+	public static String currentUser;
 	
 
 	/**
@@ -49,6 +50,10 @@ public class LoginWindow {
 	public LoginWindow() {
 		initialize();
 		conn = javaconnect.ConnecrDb();
+	}
+	
+	public static String getUsername(){
+		return currentUser;
 	}
 
 	/**
@@ -95,6 +100,7 @@ public class LoginWindow {
 					rs = stmt.executeQuery();
 					//if username and password are correct
 					if(rs.next()){
+						currentUser = usernameField.getText();
 						JOptionPane.showMessageDialog(null, "Successful");
 						frame.dispose();
 						MainWindow mw = new MainWindow();
@@ -121,6 +127,7 @@ public class LoginWindow {
 		loginButton.setBounds(6, 198, 117, 29);
 		frame.getContentPane().add(loginButton);
 		
+		
 		JButton registerButton = new JButton("Register");
 		
 		//if the user clicks on register
@@ -140,6 +147,7 @@ public class LoginWindow {
 		JMenu mnFile = new JMenu("File");
 		menuBar.add(mnFile);
 		
+		//when user clicks exit. Exits the program
 		JMenuItem mntmExit = new JMenuItem("Exit");
 		mntmExit.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
