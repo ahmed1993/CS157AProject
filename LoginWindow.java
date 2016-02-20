@@ -1,8 +1,11 @@
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -15,6 +18,8 @@ import javax.swing.JOptionPane;
 import java.awt.event.ActionListener;
 import java.sql.*;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import javax.swing.UIManager;
 
 public class LoginWindow {
 
@@ -66,18 +71,16 @@ public class LoginWindow {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel usernameLabel = new JLabel("User Name:");
+		usernameLabel.setForeground(new Color(255, 255, 255));
 		usernameLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		usernameLabel.setBounds(6, 94, 117, 16);
 		frame.getContentPane().add(usernameLabel);
 		
 		JLabel passwordLabel = new JLabel("Password: ");
+		passwordLabel.setForeground(Color.WHITE);
 		passwordLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		passwordLabel.setBounds(6, 152, 117, 16);
 		frame.getContentPane().add(passwordLabel);
-		
-		JPanel pictureContainer = new JPanel();
-		pictureContainer.setBounds(273, 79, 158, 133);
-		frame.getContentPane().add(pictureContainer);
 		
 		usernameField = new JTextField();
 		usernameField.setBounds(100, 89, 161, 28);
@@ -155,5 +158,10 @@ public class LoginWindow {
 			}
 		});
 		mnFile.add(mntmExit);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new javax.swing.ImageIcon("/Users/ahmedsyed/Documents/workspace/StudentProjectCS157A/src/background.jpg"));
+		lblNewLabel.setBounds(0, 0, 450, 278);
+		frame.getContentPane().add(lblNewLabel);
 	}
 }

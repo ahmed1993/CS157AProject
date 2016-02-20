@@ -97,10 +97,6 @@ public class RegisterWindow {
 		frame.getContentPane().add(reglastnameField);
 		reglastnameField.setColumns(10);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(269, 57, 175, 160);
-		frame.getContentPane().add(panel);
-		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 132, 22);
 		frame.getContentPane().add(menuBar);
@@ -163,7 +159,7 @@ public class RegisterWindow {
 							stmt.close();
 						}
 						catch(Exception ex){
-							JOptionPane.showMessageDialog(null, ex);
+							//JOptionPane.showMessageDialog(null, ex);
 						}
 					}
 					
@@ -172,5 +168,12 @@ public class RegisterWindow {
 		});
 		registerButton.setBounds(15, 228, 117, 29);
 		frame.getContentPane().add(registerButton);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new javax.swing.ImageIcon("/Users/ahmedsyed/Documents/workspace/StudentProjectCS157A/src/background.jpg"));
+		lblNewLabel.setBounds(0, 0, 450, 278);
+		frame.getContentPane().add(lblNewLabel);
+		
+		
 	}
 }
